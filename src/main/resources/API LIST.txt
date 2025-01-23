@@ -1,0 +1,63 @@
+Stock
+    get api/stock/{symbol}?interval&from&to
+    -interval:1hr 3hr 6hr 24hr
+    -from:year-mm-dd (optional)
+    -to:year-mm-dd (optional)
+
+    get api/SAMSUNG/search?keyword&category&pageNo&pageSize&sortBy
+    -keyword: 이름/symbol
+    -category: category (optional)
+
+
+
+
+
+Member
+    post api/member/register
+        body
+        -id
+        -password
+
+    post api/member/login
+        body
+        -id
+        -password
+
+    get api/member/{username}
+
+    put api/member/change-password/{username}
+        body
+        -password
+
+    delete api/member/{username}
+
+Transaction
+    post api/transaction/buy
+        body
+        -username
+        -symbol (required)
+        -amount (required)
+
+    post api/transaction/sell
+        body
+        -username
+        -symbol (required)
+        -amount (required)
+
+    get api/transaction/{username}?type&pageNo&pageSize
+    -type:buy/sell
+
+    put api/transaction/{transactionId}
+
+Hold
+    get api/hold/member
+
+
+
+
+
+
+
+
+
+
